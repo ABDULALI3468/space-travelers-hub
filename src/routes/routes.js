@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../pages/home";
-import Products from "../pages/products";
-import Contacts from "../pages/contacts";
+import Home from "../pages/Missions";
+import Products from "../pages/MyProfile";
+import Contacts from "../pages/Rockets";
 
 const Routes = () => (
   <Switch>
