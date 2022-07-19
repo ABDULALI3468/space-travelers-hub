@@ -1,14 +1,14 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Home from "../pages/Missions";
-import Products from "../pages/MyProfile";
-import Contacts from "../pages/Rockets";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Missions from '../components/Missions';
+import MyProfile from '../components/MyProfile';
+import Rockets from '../components/Rockets';
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/products" component={Products} />
-    <Route path="/contacts" component={Contacts} />
+    <Route exact path="/" component={Rockets} />
+    <Route path="/missions" component={Missions} />
+    <Route path="/my-profile" component={MyProfile} />
   </Switch>
 );
 

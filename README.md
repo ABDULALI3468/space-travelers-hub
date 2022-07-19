@@ -53,6 +53,11 @@ Run the following commands as listed in your terminal:
 
 Contributions, issues, and feature requests are welcome!
 
+Feel free to check the [issues page](https://github.com/ABDULALI3468/space-travelers-hub.git/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project and how we manage to build it!
 
 ## Show your support
 
