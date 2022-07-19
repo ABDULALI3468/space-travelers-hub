@@ -11,7 +11,6 @@ export const retrieveMissions = createAsyncThunk(
   async () => {
     const res = await MissionsService.getMissions();
     const { data } = res;
-    console.log(data);
     return data;
   },
 );

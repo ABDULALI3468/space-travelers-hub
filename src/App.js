@@ -1,7 +1,7 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';
 import Routes from './routes/routes';
-import { Provider } from 'react-redux';
 import store from './Redux/ConfigureStore';
 
 const App = () => (
