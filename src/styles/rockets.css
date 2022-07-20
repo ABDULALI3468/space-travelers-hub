@@ -26,8 +26,9 @@
 }
 
 .rocket-image img {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
 }
 
 .rocket-content-container {
@@ -38,8 +39,19 @@
 .rocket-name {
   font-size: 2em;
   font-family: "Roboto", sans-serif;
+  color: rgb(185, 179, 179);
   margin: 0;
   padding: 0;
+}
+
+.show-Reserve {
+  background-color: #48b4c6;
+  color: white;
+  height: 1.8em;
+  border: none;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .rocket-description {
@@ -47,14 +59,25 @@
   font-family: "Roboto", sans-serif;
   margin-top: 0.7em;
   margin-bottom: 0.7em;
+  line-height: 1.5em;
 }
 
-.rocket-button {
+.rocket-reserve-button {
   background-color: #007bff;
   border: none;
   border-radius: 10px;
-  width: 9em;
+  width: 11em;
   height: 3em;
   font-family: "Roboto", sans-serif;
   color: white;
+}
+
+.rocket-cancel-button {
+  background-color: white;
+  border-radius: 10px;
+  width: 11em;
+  height: 3em;
+  font-family: "Roboto", sans-serif;
+  color: rgb(138, 131, 131);
+  border: 1px solid rgb(138, 131, 131);
 }
