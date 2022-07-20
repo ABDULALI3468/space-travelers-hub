@@ -19,7 +19,7 @@ const Rockets = () => {
   return (
     <div className="rockets-container">
       {rockets.map(({
-        id, name, description, images,
+        id, name, description, images, reserved,
       }) => (
         <div className="rocket-container" key={id}>
           <div className="rocket-image">
@@ -28,13 +28,20 @@ const Rockets = () => {
 
           <div className="rocket-content-container">
             <h1 className="rocket-name">{name}</h1>
-            <p className="rocket-description">{description}</p>
-            <button onClick={() => reserveRocket(id)} className="rocket-button" type="button">
-              Reserve Rocket
-            </button>
-            <button onClick={() => cancelRocketReservation(id)} className="rocket-button" type="button">
-              Cancel Reservation
-            </button>
+            <p className="rocket-description">
+              {reserved && <button type="button" className="show-Reserve">Reserved</button>}
+              {description}
+            </p>
+            {!reserved && (
+              <button onClick={() => reserveRocket(id)} className="rocket-reserve-button" type="button">
+                Reserve Rocket
+              </button>
+            )}
+            {reserved && (
+              <button onClick={() => cancelRocketReservation(id)} className="rocket-cancel-button" type="button">
+                Cancel Reservation
+              </button>
+            )}
           </div>
         </div>
       ))}
