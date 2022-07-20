@@ -1,30 +1,48 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable quotes */
-/* eslint-disable comma-spacing */
-/* eslint-disable  no-return-assign  */
-/* eslint-disable  no-param-reassign  */
-import React from "react";
-import { useSelector } from "react-redux";
-import "../styles/myProfile.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Table from 'react-bootstrap/Table';
+import '../styles/MyProfile.css';
 
 const MyProfile = () => {
-  const rockets = useSelector((state) => state.rocket);
-  const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+  const reservedMissions = useSelector((state) => (
+    state.missions.filter((mission) => mission.reserved)
+  ));
+
+  const reservedRockets = useSelector((state) => (
+    state.missions.filter((rocket) => rocket.reserved)
+  ));
 
   return (
-    <>
-      <div className="container">
-        <div className="rockets">
-          <h1 className="rockets-heading">Rockets</h1>
-          {reservedRockets.map((rocket) => (
-            <>
-              <p className="eachRocket">{rocket.name}</p>
-            </>
-          ))}
-        </div>
-      </div>
-    </>
+    <div className="profile-content">
+      <section className="reserved-missions">
+        <h1>My Missions</h1>
+        <Table bordered />
+      </section>
+      <tbody>
+        {
+            reservedMissions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td>{mission.mission_name}</td>
+              </tr>
+            ))
+          }
+      </tbody>
+
+      <section className="reserved-rockets">
+        <h1>My Rockets</h1>
+        <Table bordered>
+          <tbody>
+            {
+              reservedRockets.map((rocket) => (
+                <tr key={rocket.id}>
+                  <td>{rocket.name}</td>
+                </tr>
+              ))
+          }
+          </tbody>
+        </Table>
+      </section>
+    </div>
   );
 };
 

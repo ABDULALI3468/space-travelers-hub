@@ -1,21 +1,17 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-unused-vars */
-/* eslint-disable quotes */
-import { useSelector, useDispatch } from "react-redux";
-import { React, useEffect } from "react";
-import { fetchRocketsAction, reserveRocketsAction, cancelRocketsAction } from "../Redux/rockets/rockets";
-import "../styles/rockets.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { React, useEffect } from 'react';
+import { fetchRockets, reserveRocketsAction, cancelRocketsAction } from '../Redux/rockets/rockets';
+import '../styles/rockets.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rocket);
+  const rockets = useSelector((state) => state.rockets);
 
   useEffect(() => {
-    if (!rockets.length) {
-      dispatch(fetchRocketsAction);
+    if (rockets.length === 0) {
+      dispatch(fetchRockets());
     }
-  });
+  }, []);
 
   const reserveRocket = (id) => dispatch(reserveRocketsAction(id));
   const cancelRocketReservation = (id) => dispatch(cancelRocketsAction(id));
@@ -23,7 +19,7 @@ const Rockets = () => {
   return (
     <div className="rockets-container">
       {rockets.map(({
-        id, name, description, images, reserved
+        id, name, description, images, reserved,
       }) => (
         <div className="rocket-container" key={id}>
           <div className="rocket-image">
