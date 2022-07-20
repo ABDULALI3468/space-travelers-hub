@@ -1,0 +1,25 @@
+table {
+    margin: 50px auto !important;
+    width: 90% !important;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.center-content {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.hide {
+    color: white;
+}
+
+.description {
+    width: 60%;
+}
+
+.mission-name {
+    width: 15%;
+}
