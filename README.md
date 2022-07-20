@@ -1,53 +1,45 @@
-# Space Travelers Hub
+# Space-Travelers-Hub
 
-> We are building a space X app.
-
-![screenshot](./home.png)
-![screenshot](./calculator.png)
-![screenshot](./quote.png)
-
+We are creating a space mission website.
 
 ## Built With
 
-- React
-- Redux
 - HTML
 - CSS
+- React
+- Redux
 - JavaScript
-- Webpack
-- Jest
 
-## Live Demo(Coming soon)
-
-[Live Demo Link on Heroku]()
-[Live Demo Link on Netlify]()
-
+## Live demo link (Will be available soon)
 
 ## Getting Started
 
-Make sur you have the latest version of NodeJS en npm installed locally.
+To get a local copy up and running:
 
-Run the following commands as listed in your terminal:
-- git clone https://github.com/ABDULALI3468/space-travelers-hub.git
-- cd spce-travelers-hub
-- npm install
-- npm run build
-- npm start
+1. Clone this repository or download the Zip folder:
 
+**``git clone https://github.com/ABDULALI3468/space-travelers-hub.git``**
 
-**Feel free to discover the code and help us improve it**
+2. use the following commands
 
+**``npm install ``**, 
+**``npm start``**
 
-## Authors
+## Author
+
+👤 **ABDUL ALI**
+
+> * This is My **GitHub**: ![GitHub followers](https://img.shields.io/github/followers/ABDULALI3468?label=ABDULALI&style=social)
+> * This is My **Linkedin**: [![Linkedin Badge](https://img.shields.io/badge/-ABDUL%20ALI-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/abdul-ali-5400bb216/)](https://www.linkedin.com/in/abdul-ali-5400bb216/)&nbsp;
+> * This is My **Twitter**: [![Twitter Badge](https://img.shields.io/badge/-@mrabdul_ali_-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/mrabdul_ali)](https://twitter.com/mrabdul_ali)&nbsp;
 
 👤 **Manezeu Patricia**
 
 - GitHub: [@githubhandle](https://github.compatriciachrysy)
 
-👤 **Abdul Ali**
+## Credits
 
-- GitHub: [@githubhandle](https://github.com/ABDULALI3468)
-  
+Template from this [MICROVERSE](https://www.microverse.org/)
 
 ## 🤝 Contributing
 
@@ -58,15 +50,6 @@ Feel free to check the [issues page](https://github.com/ABDULALI3468/space-trave
 ## Show your support
 
 Give a ⭐️ if you like this project and how we manage to build it!
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Great team work on the project in Pair Programming
-- Thank you for Microverse for providing the required materials
 
 ## 📝 License
 
