@@ -4,7 +4,7 @@
 /* eslint-disable quotes */
 import { useSelector, useDispatch } from "react-redux";
 import { React, useEffect } from "react";
-import fetchRockets from "../Redux/rockets/rockets";
+import { fetchRocketsAction, reserveRocketsAction, cancelRocketsAction } from "../Redux/rockets/rockets";
 import "../styles/rockets.css";
 
 const Rockets = () => {
@@ -13,9 +13,12 @@ const Rockets = () => {
 
   useEffect(() => {
     if (!rockets.length) {
-      dispatch(fetchRockets);
+      dispatch(fetchRocketsAction);
     }
   });
+
+  const reserveRocket = (id) => dispatch(reserveRocketsAction(id));
+  const cancelRocketReservation = (id) => dispatch(cancelRocketsAction(id));
 
   return (
     <div className="rockets-container">
@@ -30,8 +33,11 @@ const Rockets = () => {
           <div className="rocket-content-container">
             <h1 className="rocket-name">{name}</h1>
             <p className="rocket-description">{description}</p>
-            <button className="rocket-button" type="button">
+            <button onClick={() => reserveRocket(id)} className="rocket-button" type="button">
               Reserve Rocket
+            </button>
+            <button onClick={() => cancelRocketReservation(id)} className="rocket-button" type="button">
+              Cancel Reservation
             </button>
           </div>
         </div>
