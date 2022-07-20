@@ -1,18 +1,12 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-unused-vars */
-/* eslint-disable quotes */
-const BASE_ROCKET_URL = "https://api.spacexdata.com/v3/rockets";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const FETCH_ROCKETS = "FETCH_ROCKETS";
-const RESERVE_ROCKETS = "RESERVE_ROCKETS";
-const CANCEL_ROCKET_RESERVE = "CANCEL_ROCKET_RESERVE";
-const rockets = [];
+const BASE_ROCKET_URL = 'https://api.spacexdata.com/v3/rockets';
 
-export const fetchRocketsAction = (rockets) => ({
-  type: FETCH_ROCKETS,
-  rockets,
-});
+const FETCH_ASYNC_ROCKETS = 'space-travelers-hub/rockets/FETCH_ROCKETS';
+const FETCH_ROCKETS = 'space-travelers-hub/rockets/FETCH_ROCKETS/fulfilled';
+const RESERVE_ROCKETS = 'space-travelers-hub/rockets/RESERVE_ROCKETS';
+const CANCEL_ROCKET_RESERVE = 'space-travelers-hub/rockets/CANCEL_ROCKET_RESERVE';
+const initialState = [];
 
 export const reserveRocketsAction = (id) => ({
   type: RESERVE_ROCKETS,
@@ -24,26 +18,26 @@ export const cancelRocketsAction = (id) => ({
   id,
 });
 
-const fetchRockets = async (dispatch) => {
-  const response = await fetch(BASE_ROCKET_URL);
-  const data = await response.json();
-  dispatch(
-    fetchRocketsAction(
-      data.map((eachRocket) => ({
-        id: eachRocket.rocket_id,
-        name: eachRocket.rocket_name,
-        type: eachRocket.rocket_type,
-        description: eachRocket.description,
-        images: eachRocket.flickr_images,
-      }))
-    )
-  );
-};
+export const fetchRockets = createAsyncThunk(
+  FETCH_ASYNC_ROCKETS,
+  async () => {
+    const response = await fetch(BASE_ROCKET_URL);
+    const data = await response.json();
+    const payload = data.map((eachRocket) => ({
+      id: eachRocket.rocket_id,
+      name: eachRocket.rocket_name,
+      type: eachRocket.rocket_type,
+      description: eachRocket.description,
+      images: eachRocket.flickr_images,
+    }));
+    return payload;
+  },
+);
 
-export const rocket = (state = rockets, action) => {
+const rockets = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS: {
-      return action.rockets;
+      return action.payload;
     }
     case RESERVE_ROCKETS:
       return state.map((rocket) => {
@@ -60,4 +54,4 @@ export const rocket = (state = rockets, action) => {
   }
 };
 
-export default fetchRockets;
+export default rockets;

@@ -1,0 +1,20 @@
+.profile-content {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.profile-content section {
+  width: 50%;
+}
+
+.profile-content section h1 {
+  margin-left: 5%;
+  margin-bottom: 10px;
+}
+
+table {
+  margin-top: 10px !important;
+}
