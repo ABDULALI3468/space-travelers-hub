@@ -5,11 +5,23 @@
 const BASE_ROCKET_URL = "https://api.spacexdata.com/v3/rockets";
 
 const FETCH_ROCKETS = "FETCH_ROCKETS";
+const RESERVE_ROCKETS = "RESERVE_ROCKETS";
+const CANCEL_ROCKET_RESERVE = "CANCEL_ROCKET_RESERVE";
 const rockets = [];
 
 export const fetchRocketsAction = (rockets) => ({
   type: FETCH_ROCKETS,
   rockets,
+});
+
+export const reserveRocketsAction = (id) => ({
+  type: RESERVE_ROCKETS,
+  id,
+});
+
+export const cancelRocketsAction = (id) => ({
+  type: CANCEL_ROCKET_RESERVE,
+  id,
 });
 
 const fetchRockets = async (dispatch) => {
@@ -33,6 +45,16 @@ export const rocket = (state = rockets, action) => {
     case FETCH_ROCKETS: {
       return action.rockets;
     }
+    case RESERVE_ROCKETS:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: true };
+      });
+    case CANCEL_ROCKET_RESERVE:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: false };
+      });
     default:
       return state;
   }
