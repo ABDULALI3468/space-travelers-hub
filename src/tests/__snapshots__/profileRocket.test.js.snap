@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check if it renders correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="rockets"
+  >
+    <h1
+      className="rockets-heading"
+    >
+      Rockets
+    </h1>
+  </div>
+</div>
+`;
