@@ -1,0 +1,83 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rockets-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.rocket-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5em;
+}
+
+.rocket-image {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.rocket-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.rocket-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.rocket-name {
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+  color: rgb(185, 179, 179);
+  margin: 0;
+  padding: 0;
+}
+
+.show-Reserve {
+  background-color: #48b4c6;
+  color: white;
+  height: 1.8em;
+  border: none;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.rocket-description {
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  line-height: 1.5em;
+}
+
+.rocket-reserve-button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  width: 11em;
+  height: 3em;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.rocket-cancel-button {
+  background-color: white;
+  border-radius: 10px;
+  width: 11em;
+  height: 3em;
+  font-family: "Roboto", sans-serif;
+  color: rgb(138, 131, 131);
+  border: 1px solid rgb(138, 131, 131);
+}
