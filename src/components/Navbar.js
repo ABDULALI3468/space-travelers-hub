@@ -13,11 +13,11 @@ const Navbar = () => (
       <NavLink exact activeClassName="navbar__link--active" className="navbar__link" to="/">
         Rockets
       </NavLink>
-      <NavLink activeClassName="navbar__link--active" className="navbar__link" to="Missions">
+      <NavLink activeClassName="navbar__link--active" className="navbar__link" to="/missions">
         Missions
       </NavLink>
       <span className="line" />
-      <NavLink activeClassName="navbar__link--active" className="navbar__link" to="My-Profile">
+      <NavLink activeClassName="navbar__link--active" className="navbar__link" to="/my-profile">
         My Profile
       </NavLink>
     </div>
